@@ -2,6 +2,7 @@ package com.bee.study.controller;
 
 import com.bee.study.domain.req.UserInfo;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
 
     @RequestMapping(value = "/index")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("name", "tdd");
+        model.addAttribute("msg", "login success");
         return "/hello.html";
     }
 
